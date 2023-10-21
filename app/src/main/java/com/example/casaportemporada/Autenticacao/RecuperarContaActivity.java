@@ -52,16 +52,15 @@ public class RecuperarContaActivity extends AppCompatActivity {
 
             if (task.isSuccessful()){
 
-                progressBar.setVisibility(View.GONE);
                 Toast.makeText(this, "E-mail enviado com sucesso!", Toast.LENGTH_SHORT).show();
-
-                finish();
-                startActivity(new Intent(this, LoginActivity.class));
 
             }else {
 
                 Toast.makeText(this, "E-mail inválido, por favor, digite seu email corretamente.", Toast.LENGTH_SHORT).show();
             }
+
+            progressBar.setVisibility(View.GONE);
+
         });
     }
 
