@@ -6,7 +6,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.ImageDecoder;
-import android.media.Image;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -16,11 +15,14 @@ import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.example.casaportemporada.Model.Produto;
+import com.example.casaportemporada.Model.Anuncio;
 import com.example.casaportemporada.R;
+import com.example.casaportemporada.helper.FirebaseHelper;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
-import java.io.EOFException;
 import java.io.IOException;
 
 public class FormAnuncioActivity extends AppCompatActivity {
@@ -38,6 +40,7 @@ public class FormAnuncioActivity extends AppCompatActivity {
     private ImageView img_anuncio;
     private String caminhoImagem;
     private Bitmap imagem;
+    private Anuncio anuncio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,13 +84,21 @@ public class FormAnuncioActivity extends AppCompatActivity {
                         if (!garagem.isEmpty()) {
                             if (!status.isEmpty()) {
 
-                                Produto produto = new Produto();
-                                produto.setTitulo(titulo);
-                                produto.setDescricao(descricao);
-                                produto.setQuarto(quarto);
-                                produto.setBanheiro(banheiro);
-                                produto.setGaragem(garagem);
-                                produto.setStatus(cb_status.isChecked());
+                                if (anuncio == null) anuncio = new Anuncio();
+                                anuncio.setTitulo(titulo);
+                                anuncio.setDescricao(descricao);
+                                anuncio.setQuarto(quarto);
+                                anuncio.setBanheiro(banheiro);
+                                anuncio.setGaragem(garagem);
+                                anuncio.setStatus(cb_status.isChecked());
+                                
+                                if (caminhoImagem != null){
+                                    salvarImagemAnuncio();
+                                    
+                                }else {
+                                    Toast.makeText(this, "Selecione uma imagem para o anuncio.", Toast.LENGTH_SHORT).show();
+
+                                }
 
                             } else {
                                 cb_status.requestFocus();
@@ -115,6 +126,26 @@ public class FormAnuncioActivity extends AppCompatActivity {
         }
 
 
+    }
+
+    private void salvarImagemAnuncio(){
+        StorageReference storageReference = FirebaseHelper.getStorageReference()
+                .child("imagens")
+                .child("anuncios")
+                // .jpeg será a estensão do arquivo
+                .child(anuncio.getId() + ".jpeg");
+
+        UploadTask uploadTask = storageReference.putFile(Uri.parse(caminhoImagem));
+        uploadTask.addOnSuccessListener(taskSnapshot -> storageReference.getDownloadUrl().addOnCompleteListener(task -> {
+
+            // recupera a imagem salva no firebase
+            String urlImagem = task.getResult().toString();
+            anuncio.setUrlImagem(urlImagem);
+
+            anuncio.salvar();
+            //finish();
+
+        })).addOnFailureListener(e -> Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show());
     }
 
     private void iniciaComponentes() {

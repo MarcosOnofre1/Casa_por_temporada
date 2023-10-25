@@ -181,7 +181,14 @@
                 android:buttonTint="@color/azul_toolbar"
                 android:checked="true"/>
 
-
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                tools:visibility="visible"
+                android:indeterminateTint="@color/azul_padrao"
+                android:layout_gravity="center_horizontal"/>
 
 
         </LinearLayout>

@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,17 +15,17 @@
         android:theme="@style/Base.Theme.CasaPorTemporada"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.MinhaContaActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.MeusAnunciosActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.FiltarAnunciosActivity"
+            android:exported="false" />
+        <activity
             android:name=".Activity.FormAnuncioActivity"
-            android:exported="true">
-
-
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".Autenticacao.RecuperarContaActivity"
             android:exported="false" />
@@ -33,12 +34,16 @@
             android:exported="false" />
         <activity
             android:name=".Autenticacao.LoginActivity"
-            android:exported="false">
-
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".Activity.MainActivity"
-            android:exported="true" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

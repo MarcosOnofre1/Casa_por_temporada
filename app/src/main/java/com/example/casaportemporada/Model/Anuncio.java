@@ -1,12 +1,9 @@
 package com.example.casaportemporada.Model;
 
-import android.widget.CheckBox;
-
 import com.example.casaportemporada.helper.FirebaseHelper;
 import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
-public class Produto {
+public class Anuncio {
 
     private String id;
     private String titulo;
@@ -15,11 +12,22 @@ public class Produto {
     private String banheiro;
     private String garagem;
     private boolean status;
+    private String urlImagem;
 
-    public Produto() {
+
+    public Anuncio() {
         DatabaseReference reference = FirebaseHelper.getDatabaseReference();
-        //criamos um ID para cada produto novo criado.
+        //criamos um ID para cada anuncio novo criado.
         this.setId(reference.push().getKey());
+    }
+
+    public void salvar() {
+        DatabaseReference reference = FirebaseHelper.getDatabaseReference()
+                .child("anuncios")
+                .child(FirebaseHelper.getIdFirebase())
+                .child(this.getId());
+        reference.setValue(this);
+
     }
 
     public String getId() {
@@ -76,5 +84,13 @@ public class Produto {
 
     public void setStatus(boolean status) {
         this.status = status;
+    }
+
+    public String getUrlImagem() {
+        return urlImagem;
+    }
+
+    public void setUrlImagem(String urlImagem) {
+        this.urlImagem = urlImagem;
     }
 }

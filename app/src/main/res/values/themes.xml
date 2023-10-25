@@ -5,6 +5,11 @@
         <item name="colorPrimaryContainer">@color/azul_padrao</item>
 
     </style>
-'
+
+    <style name="CustomAlertDialog" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:windowBackground">@drawable/bg_alert_dialog</item>
+        <item name="android:windowMinWidthMinor">80%</item>
+    </style>
+
 
 </resources>
