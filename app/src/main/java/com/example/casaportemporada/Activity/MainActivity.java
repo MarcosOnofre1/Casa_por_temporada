@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(new Intent(this, MeusAnunciosActivity.class));
 
                     } else {
-                        showDialog("Conta não autenticada.\nDeseja autenticar agora?.");
+                        showDialog("Você não está autenticado.\nDeseja fazer isso agora?");
                     }
 
                 } else {
@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(new Intent(this, MinhaContaActivity.class));
 
                     } else {
-                        showDialog("Conta não autenticada.\nDeseja autenticar agora?.");
+                        showDialog("Você não está autenticado.\nDeseja fazer isso agora?");
                     }
                 }
                 return true;
