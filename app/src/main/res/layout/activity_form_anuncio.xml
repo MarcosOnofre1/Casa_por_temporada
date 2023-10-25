@@ -29,18 +29,22 @@
             android:orientation="vertical">
 
             <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
                 android:layout_width="140dp"
                 android:layout_height="140dp"
-                app:cardCornerRadius="16dp"
-                android:layout_marginTop="24dp"
+                android:onClick="configImagem"
                 android:layout_gravity="center_horizontal"
-                android:backgroundTint="@color/azul_toolbar">
+                android:layout_marginTop="24dp"
+                android:backgroundTint="@color/azul_toolbar"
+                app:cardCornerRadius="16dp">
 
                 <ImageView
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
+                    android:id="@+id/img_anuncio"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center"
-                    android:src="@drawable/ic_imagem"/>
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_photo2" />
 
 
             </androidx.cardview.widget.CardView>
