@@ -2,9 +2,11 @@ package com.example.casaportemporada.Autenticacao;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -56,6 +58,7 @@ public class CriarContaActivity extends AppCompatActivity {
                             if (senha.equals(confirmaSenha)){
 
                                 progressBar.setVisibility(View.VISIBLE);
+                                ocutarTeclado();
 
                                 Usuario usuario = new Usuario();
                                 usuario.setNome(nome);
@@ -64,6 +67,8 @@ public class CriarContaActivity extends AppCompatActivity {
                                 usuario.setSenha(senha);
 
                                 cadastrarUsuario(usuario);
+
+
 
 
                             }else {
@@ -114,6 +119,11 @@ public class CriarContaActivity extends AppCompatActivity {
                         Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
                     }
         });
+    }
+
+    private void ocutarTeclado() {
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(edit_nome.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
     }
 
     private void iniciaComponentes(){

@@ -2,9 +2,11 @@ package com.example.casaportemporada.Autenticacao;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -52,7 +54,7 @@ public class LoginActivity extends AppCompatActivity {
             if (!senha.isEmpty()) {
 
                 progressBar.setVisibility(View.VISIBLE);
-
+                ocutarTeclado();
                 logar(email, senha);
 
             } else {
@@ -81,6 +83,10 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
+    private void ocutarTeclado() {
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(edit_email.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+    }
 
     private void iniciaComponentes() {
         edit_email = findViewById(R.id.edit_email);

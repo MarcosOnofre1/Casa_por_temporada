@@ -3,6 +3,7 @@ package com.example.casaportemporada.Activity;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.ImageDecoder;
@@ -11,9 +12,11 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,6 +43,8 @@ public class FormAnuncioActivity extends AppCompatActivity {
     private ImageView img_anuncio;
     private String caminhoImagem;
     private Bitmap imagem;
+    private ProgressBar progressBar;
+
     private Anuncio anuncio;
 
     @Override
@@ -129,6 +134,10 @@ public class FormAnuncioActivity extends AppCompatActivity {
     }
 
     private void salvarImagemAnuncio(){
+
+        progressBar.setVisibility(View.VISIBLE);
+        ocutarTeclado();
+
         StorageReference storageReference = FirebaseHelper.getStorageReference()
                 .child("imagens")
                 .child("anuncios")
@@ -143,9 +152,18 @@ public class FormAnuncioActivity extends AppCompatActivity {
             anuncio.setUrlImagem(urlImagem);
 
             anuncio.salvar();
-            //finish();
+            finish();
 
-        })).addOnFailureListener(e -> Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show());
+        })).addOnFailureListener(e -> {
+            progressBar.setVisibility(View.GONE);
+            Toast.makeText(this, e.getMessage(), Toast.LENGTH_SHORT).show();
+
+        });
+    }
+
+    private void ocutarTeclado() {
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(edit_titulo.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
     }
 
     private void iniciaComponentes() {
@@ -157,6 +175,7 @@ public class FormAnuncioActivity extends AppCompatActivity {
         edit_garagem = findViewById(R.id.edit_garagem);
         cb_status = findViewById(R.id.cb_status);
         img_anuncio = findViewById(R.id.img_anuncio);
+        progressBar = findViewById(R.id.progressBar);
 
     }
 
@@ -198,6 +217,7 @@ public class FormAnuncioActivity extends AppCompatActivity {
             }
         }
     }
+
 
     private void configToolbar() {
         TextView text_titulo = findViewById(R.id.text_titulo);

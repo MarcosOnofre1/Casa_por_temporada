@@ -54,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
                         showDialog("Você não está autenticado.\nDeseja fazer isso agora?");
                     }
 
+                } else if (menuItem.getItemId() == R.id.sair_acc) {
+                    startActivity(new Intent(this, LoginActivity.class));
+
                 } else {
                     if (FirebaseHelper.getAutenticado()) {
                         startActivity(new Intent(this, MinhaContaActivity.class));

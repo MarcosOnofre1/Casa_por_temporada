@@ -44,4 +44,7 @@ dependencies {
     implementation("com.google.firebase:firebase-database")
     implementation("com.google.firebase:firebase-storage")
 
+    //PICASO: https://github.com/square/picasso
+    implementation 'com.squareup.picasso:picasso:2.8'
+
 }

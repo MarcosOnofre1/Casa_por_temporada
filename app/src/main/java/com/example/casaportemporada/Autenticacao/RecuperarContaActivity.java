@@ -2,9 +2,11 @@ package com.example.casaportemporada.Autenticacao;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -37,6 +39,7 @@ public class RecuperarContaActivity extends AppCompatActivity {
         if (!email.isEmpty()){
 
             progressBar.setVisibility(View.VISIBLE);
+            ocutarTeclado();
             recuperaSenha(email);
 
         }else {
@@ -67,6 +70,11 @@ public class RecuperarContaActivity extends AppCompatActivity {
     private void configCliques(){
         findViewById(R.id.btn_voltar).setOnClickListener(view -> finish());
 
+    }
+
+    private void ocutarTeclado() {
+        InputMethodManager inputMethodManager = (InputMethodManager) getSystemService(Activity.INPUT_METHOD_SERVICE);
+        inputMethodManager.hideSoftInputFromWindow(edit_recuperaEmail.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
     }
 
     private void configToolbar(){
