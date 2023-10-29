@@ -55,6 +55,8 @@ public class MainActivity extends AppCompatActivity {
                     }
 
                 } else if (menuItem.getItemId() == R.id.sair_acc) {
+                    FirebaseHelper.getAuth().signOut();
+                    finish();
                     startActivity(new Intent(this, LoginActivity.class));
 
                 } else {
