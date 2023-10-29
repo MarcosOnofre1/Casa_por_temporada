@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="@drawable/bg_login"
     tools:context=".Autenticacao.LoginActivity">
 
     <ScrollView
@@ -25,7 +25,7 @@
                 android:layout_height="wrap_content"
                 android:background="@android:color/transparent"
                 android:padding="16dp"
-                android:src="@drawable/ic_voltar_azul_toolbar"
+                android:src="@drawable/ic_voltar_azul_teste1"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -45,7 +45,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_edt"
+                    android:textColorHint="#1F8D8D"
                     android:hint="E-mail"
+                    android:textColor="#EFEFEF"
                     android:inputType="textEmailAddress"
                     android:padding="16dp" />
 
@@ -56,6 +58,8 @@
                     android:layout_marginTop="8dp"
                     android:background="@drawable/bg_edt"
                     android:hint="Senha"
+                    android:textColor="#EFEFEF"
+                    android:textColorHint="#1F8D8D"
                     android:inputType="textPassword"
                     android:padding="16dp" />
 
@@ -82,7 +86,7 @@
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
                         android:text="Cadastra-se"
-                        android:textColor="#9685C3" />
+                        android:textColor="@color/azul_teste1" />
 
                     <TextView
                         android:id="@+id/text_recuperar_senha"
@@ -91,7 +95,7 @@
                         android:layout_weight="1"
                         android:text="Recuperar senha"
                         android:textAlignment="textEnd"
-                        android:textColor="#FF9685C3" />
+                        android:textColor="@color/azul_teste1" />
 
                 </LinearLayout>
 
@@ -102,7 +106,7 @@
                     android:layout_marginTop="8dp"
                     android:visibility="gone"
                     tools:visibility="visible"
-                    android:indeterminateTint="@color/azul_padrao"/>
+                    android:indeterminateTint="@color/azul_teste1"/>
 
 
             </LinearLayout>
