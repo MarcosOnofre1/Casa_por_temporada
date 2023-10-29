@@ -47,4 +47,7 @@ dependencies {
     //PICASO: https://github.com/square/picasso
     implementation 'com.squareup.picasso:picasso:2.8'
 
+    // SWIPE: https://github.com/tsuryo/Swipeable-RecyclerView#installing
+    implementation 'com.github.tsuryo:Swipeable-RecyclerView:1.1'
+
 }

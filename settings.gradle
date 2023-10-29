@@ -10,6 +10,8 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        // https://github.com/tsuryo/Swipeable-RecyclerView#installing
+        maven { url 'https://jitpack.io' }
     }
 }
 rootProject.name = "Casa por Temporada"

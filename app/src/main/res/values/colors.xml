@@ -5,4 +5,5 @@
     <color name="azul_padrao">#279AFB</color>
     <color name="azul_toolbar">#6650A0</color>
     <color name="azul_teste1">#A88DEF</color>
+    <color name="delete_swipe">#F90303</color>
 </resources>

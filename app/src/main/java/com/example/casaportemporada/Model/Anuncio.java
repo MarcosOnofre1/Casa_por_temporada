@@ -2,10 +2,14 @@ package com.example.casaportemporada.Model;
 
 import com.example.casaportemporada.helper.FirebaseHelper;
 import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.storage.StorageReference;
 
-public class Anuncio {
+import java.io.Serializable;
+
+public class Anuncio implements Serializable {
 
     private String id;
+    private String idUsuario;
     private String titulo;
     private String descricao;
     private String quarto;
@@ -30,12 +34,40 @@ public class Anuncio {
 
     }
 
+    public void delete() {
+        DatabaseReference reference = FirebaseHelper.getDatabaseReference()
+                .child("anuncios")
+                .child(FirebaseHelper.getIdFirebase())
+                .child(this.getId());
+        reference.removeValue().addOnCompleteListener(task -> {
+           // so ira deletar a imagem caso ocorra com sucesso o delete das informações do banco de dados do Realtime Database
+            // Pode ser que ocorra um erro de deletar o anuncio, a imagem pode ser deletada e o anuncio fique sem imagem
+            if (task.isSuccessful()){
+               StorageReference storageReference = FirebaseHelper.getStorageReference()
+                       .child("imagens")
+                       .child("anuncios")
+                       // .jpeg será a extensão do arquivo
+                       .child(this.getId() + ".jpeg");
+               storageReference.delete();
+           }
+        });
+
+    }
+
     public String getId() {
         return id;
     }
 
     public void setId(String id) {
         this.id = id;
+    }
+
+    public String getIdUsuario() {
+        return idUsuario;
+    }
+
+    public void setIdUsuario(String idUsuario) {
+        this.idUsuario = idUsuario;
     }
 
     public String getTitulo() {

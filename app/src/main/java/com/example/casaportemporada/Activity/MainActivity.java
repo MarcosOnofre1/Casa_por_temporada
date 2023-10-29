@@ -94,7 +94,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(this, LoginActivity.class)));
 
         Button btnFechar = view.findViewById(R.id.btnFechar);
-        //dialog.dismiss faz com que assim que clica no botao, feche a tela
         btnFechar.setOnClickListener(v -> dialog.dismiss());
 
         //para exibir as view
