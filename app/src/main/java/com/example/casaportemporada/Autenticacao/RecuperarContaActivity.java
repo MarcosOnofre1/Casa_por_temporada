@@ -3,7 +3,6 @@ package com.example.casaportemporada.Autenticacao;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
@@ -78,7 +77,7 @@ public class RecuperarContaActivity extends AppCompatActivity {
     }
 
     private void configToolbar(){
-        TextView text_titulo = findViewById(R.id.text_titulo);
+        TextView text_titulo = findViewById(R.id.text_titulo_anuncio);
         text_titulo.setText("Recuperar conta");
     }
 

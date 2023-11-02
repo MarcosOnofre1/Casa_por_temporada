@@ -31,13 +31,14 @@
                 android:id="@+id/img_anuncio"
                 android:layout_width="match_parent"
                 android:layout_height="200dp"
+                android:scaleType="centerCrop"
                 android:background="@color/azul_teste1"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/text_titulo"
+                android:id="@+id/text_titulo_anuncio"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -56,7 +57,7 @@
                 android:text="Lorem ipsum dolor sit amet, consectetur adipiscing asdasdas d asdas das a sdas a sdas dasdasdasdasdas as as as aasdadsdsa adsadsdsaads dsa dsadasdsadsdsadsasaddasadsd"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/text_titulo" />
+                app:layout_constraintTop_toBottomOf="@+id/text_titulo_anuncio" />
 
             <LinearLayout
                 android:id="@+id/linearLayout"
@@ -155,7 +156,8 @@
                 android:drawablePadding="-40dp"
                 android:paddingStart="16dp"
                 android:paddingEnd="0dp"
-                android:text="LIGAR"
+                android:text="ligar"
+                android:onClick="ligar"
                 android:textColor="@android:color/white"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"

@@ -4,7 +4,6 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -12,10 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.casaportemporada.Adapter.AdapterAnuncios;
-import com.example.casaportemporada.Autenticacao.LoginActivity;
 import com.example.casaportemporada.Model.Anuncio;
 import com.example.casaportemporada.R;
 import com.example.casaportemporada.helper.FirebaseHelper;
@@ -169,7 +166,7 @@ public class MeusAnunciosActivity extends AppCompatActivity implements AdapterAn
     }
 
     private void configTitulo(){
-        TextView text_titulo = findViewById(R.id.text_titulo);
+        TextView text_titulo = findViewById(R.id.text_titulo_anuncio);
         text_titulo.setText("Meus Anúncios");
     }
 

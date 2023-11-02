@@ -31,7 +31,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/text_titulo"
+                android:id="@+id/text_titulo_anuncio"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="16dp"
@@ -55,7 +55,7 @@
                 android:textStyle="italic"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/img_anuncio"
-                app:layout_constraintTop_toBottomOf="@+id/text_titulo"
+                app:layout_constraintTop_toBottomOf="@+id/text_titulo_anuncio"
                 tools:text="Casa com vista a beira do mar com grande caragem e um quintal espaçoso." />
 
             <TextView

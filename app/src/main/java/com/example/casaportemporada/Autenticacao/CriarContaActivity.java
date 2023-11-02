@@ -135,7 +135,7 @@ public class CriarContaActivity extends AppCompatActivity {
         edit_confirma_senha = findViewById(R.id.edit_confirma_senha);
         progressBar = findViewById(R.id.progressBar);
 
-        TextView text_titulo = findViewById(R.id.text_titulo);
+        TextView text_titulo = findViewById(R.id.text_titulo_anuncio);
         text_titulo.setText("Crie sua conta");
     }
 }

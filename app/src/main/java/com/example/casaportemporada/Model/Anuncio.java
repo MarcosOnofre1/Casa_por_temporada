@@ -32,6 +32,11 @@ public class Anuncio implements Serializable {
                 .child(this.getId());
         reference.setValue(this);
 
+        DatabaseReference anuncioPublico = FirebaseHelper.getDatabaseReference()
+                .child("anuncios_publicos")
+                .child(this.getId());
+        anuncioPublico.setValue(this);
+
     }
 
     public void delete() {

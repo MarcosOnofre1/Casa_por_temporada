@@ -251,8 +251,8 @@ public class FormAnuncioActivity extends AppCompatActivity {
 
 
     private void configToolbar() {
-        TextView text_titulo = findViewById(R.id.text_titulo);
-        text_titulo.setText("Novo Formulario");
+        TextView text_titulo = findViewById(R.id.text_titulo_anuncio);
+        text_titulo.setText("Novo Anúncio");
     }
 
 
