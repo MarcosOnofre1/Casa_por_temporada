@@ -39,7 +39,6 @@ public class CriarContaActivity extends AppCompatActivity {
     private void configCliques(){
         findViewById(R.id.btn_voltar).setOnClickListener(view -> finish());
 
-
     }
 
     public void validaDados(View view){
@@ -68,9 +67,6 @@ public class CriarContaActivity extends AppCompatActivity {
 
                                 cadastrarUsuario(usuario);
 
-
-
-
                             }else {
                                 edit_senha.setError("Senhas diferentes");
                                 edit_confirma_senha.setError("Senhas diferentes");
@@ -96,8 +92,6 @@ public class CriarContaActivity extends AppCompatActivity {
             edit_nome.requestFocus();
             edit_nome.setError("Informe seu nome.");
         }
-
-
 
     }
 
@@ -138,7 +132,6 @@ public class CriarContaActivity extends AppCompatActivity {
         edit_senha = findViewById(R.id.edit_senha);
         edit_confirma_senha = findViewById(R.id.edit_confirma_senha);
         progressBar = findViewById(R.id.progressBar);
-
 
     }
 }

@@ -103,7 +103,6 @@ public class MinhaContaActivity extends AppCompatActivity {
 
     }
 
-
     public void configImagem(View view){
         imagemPerfil.setOnClickListener(v -> {
             Intent intent = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);

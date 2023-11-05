@@ -77,8 +77,8 @@ public class RecuperarContaActivity extends AppCompatActivity {
     }
 
     private void configToolbar(){
-        TextView text_titulo = findViewById(R.id.text_titulo_anuncio);
-        text_titulo.setText("Recuperar conta");
+        TextView text_titulo_toolbar = findViewById(R.id.text_titulo_toolbar);
+        text_titulo_toolbar.setText("Recuperar conta");
     }
 
     private void iniciaComponentes(){
