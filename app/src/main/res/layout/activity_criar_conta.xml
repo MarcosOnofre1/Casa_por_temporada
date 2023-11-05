@@ -35,52 +35,70 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edit_nome"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/bg_edt"
+                    android:drawableStart="@drawable/ic_user_blue"
+                    android:drawablePadding="16dp"
+                    android:textColor="@color/azul_toolbar"
                     android:hint="Nome"
                     android:inputType="textEmailAddress"
                     android:padding="16dp" />
 
 
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edit_email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/bg_edt"
+                    android:drawableStart="@drawable/ic_email_login"
+                    android:drawablePadding="16dp"
+                    android:textColor="@color/azul_toolbar"
                     android:hint="E-mail"
                     android:inputType="textEmailAddress"
                     android:padding="16dp" />
 
-                <EditText
+                <com.santalu.maskara.widget.MaskEditText
                     android:id="@+id/edit_telefone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/bg_edt"
+                    android:drawableStart="@drawable/ic_celular_login"
+                    android:drawablePadding="16dp"
                     android:hint="Telefone"
                     android:inputType="number"
-                    android:padding="16dp" />
+                    android:padding="16dp"
+                    app:mask="(__) _____-____"
+                    app:maskCharacter="_"
+                    android:textColor="@color/azul_toolbar"
+                    app:maskStyle="completable"/>
 
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edit_senha"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/bg_edt"
+                    android:drawableStart="@drawable/ic_senha_login"
+                    android:drawablePadding="16dp"
+                    android:textColor="@color/azul_toolbar"
                     android:hint="Senha"
                     android:inputType="textPassword"
                     android:padding="16dp" />
 
-                <EditText
+                <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/edit_confirma_senha"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:background="@drawable/bg_edt"
+                    android:drawableStart="@drawable/ic_senha_login"
+                    android:drawablePadding="16dp"
+                    android:textColor="@color/azul_toolbar"
                     android:hint="Confirme senha"
                     android:inputType="textPassword"
                     android:padding="16dp" />

@@ -5,13 +5,17 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.Exclude;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Usuario {
+import java.io.Serializable;
+
+public class Usuario implements Serializable {
 
     private String id;
     private String nome;
     private String email;
     private String telefone;
     private String senha;
+
+    private String urlImagem;
 
     public void salvar(){
         DatabaseReference reference = FirebaseHelper.getDatabaseReference()
@@ -20,6 +24,7 @@ public class Usuario {
         reference.setValue(this);
 
     }
+
 
     public String getId() {
         return id;
@@ -62,5 +67,14 @@ public class Usuario {
     public void setSenha(String senha) {
         this.senha = senha;
     }
+
+    public String getUrlImagem() {
+        return urlImagem;
+    }
+
+    public void setUrlImagem(String urlImagem) {
+        this.urlImagem = urlImagem;
+    }
+
 
 }

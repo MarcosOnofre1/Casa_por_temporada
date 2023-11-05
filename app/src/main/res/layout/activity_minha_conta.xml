@@ -6,4 +6,105 @@
     android:layout_height="match_parent"
     tools:context=".Activity.MinhaContaActivity">
 
+    <include
+        android:id="@+id/include8"
+        layout="@layout/toolbar_voltar_salvar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/include8">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="24dp">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
+                app:cardCornerRadius="100dp"
+                android:layout_gravity="center">
+
+                <ImageView
+                    android:id="@+id/imagemPerfil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:onClick="configImagem"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/loading" />
+
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_nome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableStart="@drawable/ic_user_blue"
+                android:drawablePadding="16dp"
+                android:layout_marginTop="34dp"
+                android:hint="Nome"
+                android:textColor="@color/azul_toolbar"
+                android:padding="16dp"
+                android:background="@drawable/bg_edt" />
+
+            <com.santalu.maskara.widget.MaskEditText
+                android:id="@+id/edit_telefone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/bg_edt"
+                android:drawableStart="@drawable/ic_celular_login"
+                android:drawablePadding="16dp"
+                android:hint="Telefone"
+                android:inputType="number"
+                android:padding="16dp"
+                app:mask="(__) _____-____"
+                app:maskCharacter="_"
+                android:textColor="@color/azul_toolbar"
+                app:maskStyle="completable"/>
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_edt"
+                android:drawableStart="@drawable/ic_email_login"
+                android:drawablePadding="16dp"
+                android:enabled="false"
+                android:clickable="false"
+                android:textColor="@color/azul_toolbar"
+                android:alpha="0.5"
+                android:padding="16dp" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="16dp"
+                android:indeterminateTint="@color/azul_teste1"/>
+
+
+
+        </LinearLayout>
+
+
+
+
+    </ScrollView>
+
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

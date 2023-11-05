@@ -76,8 +76,8 @@ public class LoginActivity extends AppCompatActivity {
                 startActivity(new Intent(this, MainActivity.class));
 
             }else {
-                String error = task.getException().getMessage();
-                Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
+                progressBar.setVisibility(View.GONE);
+                Toast.makeText(this, "Senha ou e-mail não cadastrado. Por favor, digite novamente.", Toast.LENGTH_SHORT).show();
             }
         });
 

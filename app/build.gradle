@@ -50,4 +50,7 @@ dependencies {
     // SWIPE: https://github.com/tsuryo/Swipeable-RecyclerView#installing
     implementation 'com.github.tsuryo:Swipeable-RecyclerView:1.1'
 
+    // MASKARA: https://github.com/santalu/maskara
+    implementation 'com.github.santalu:maskara:1.0.0'
+
 }

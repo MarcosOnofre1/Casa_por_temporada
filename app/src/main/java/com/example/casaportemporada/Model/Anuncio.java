@@ -40,11 +40,11 @@ public class Anuncio implements Serializable {
     }
 
     public void delete() {
-        DatabaseReference reference = FirebaseHelper.getDatabaseReference()
+        DatabaseReference anuncioPrivadoRef = FirebaseHelper.getDatabaseReference()
                 .child("anuncios")
                 .child(FirebaseHelper.getIdFirebase())
                 .child(this.getId());
-        reference.removeValue().addOnCompleteListener(task -> {
+        anuncioPrivadoRef.removeValue().addOnCompleteListener(task -> {
            // so ira deletar a imagem caso ocorra com sucesso o delete das informações do banco de dados do Realtime Database
             // Pode ser que ocorra um erro de deletar o anuncio, a imagem pode ser deletada e o anuncio fique sem imagem
             if (task.isSuccessful()){
@@ -56,6 +56,11 @@ public class Anuncio implements Serializable {
                storageReference.delete();
            }
         });
+
+        DatabaseReference anuncioPublicoRef = FirebaseHelper.getDatabaseReference()
+                .child("anuncios_publicos")
+                .child(this.getId());
+        anuncioPublicoRef.removeValue();
 
     }
 

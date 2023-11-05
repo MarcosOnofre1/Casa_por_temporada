@@ -115,6 +115,7 @@ public class CriarContaActivity extends AppCompatActivity {
                         startActivity(new Intent(this, MainActivity.class));
 
                     }else {
+                        progressBar.setVisibility(View.GONE);
                         String error = task.getException().getMessage();
                         Toast.makeText(this, error, Toast.LENGTH_SHORT).show();
                     }
@@ -128,6 +129,9 @@ public class CriarContaActivity extends AppCompatActivity {
 
     private void iniciaComponentes(){
 
+        TextView text_titulo_toolbar = findViewById(R.id.text_titulo_toolbar);
+        text_titulo_toolbar.setText("Crie sua conta");
+
         edit_nome = findViewById(R.id.edit_nome);
         edit_email = findViewById(R.id.edit_email);
         edit_telefone = findViewById(R.id.edit_telefone);
@@ -135,7 +139,6 @@ public class CriarContaActivity extends AppCompatActivity {
         edit_confirma_senha = findViewById(R.id.edit_confirma_senha);
         progressBar = findViewById(R.id.progressBar);
 
-        TextView text_titulo = findViewById(R.id.text_titulo_anuncio);
-        text_titulo.setText("Crie sua conta");
+
     }
 }
