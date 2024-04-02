@@ -17,7 +17,7 @@
   ● Java  
 </p>
 <p>
-  ● Armazenamento de Dados local
+  ● Armazenamento de Dados em tempo real
   <br>- Firebase Realtime Database
   <br>- Firebase Storage
   <br>- Autenticação via E-mail
