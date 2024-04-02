@@ -59,7 +59,7 @@
   ● Modelo de discagem de telefone em "Criar conta" 
 </p>
 <h1>🎓 Author</h1>
-<p> Marcos Vinicius Onofre (follow me on [Linkedin](https://www.linkedin.com/in/marcos-onofre-3263b6240/))</p>
+<p> Marcos Vinicius Onofre (follow me on  <a href="https://www.linkedin.com/in/marcos-onofre-3263b6240/">Linkedin</a>)</p>
 
 
 
