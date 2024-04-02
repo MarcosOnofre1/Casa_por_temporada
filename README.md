@@ -7,6 +7,7 @@
   <img width="290" height="610" src="Crie sua conta.jpg"/>
   <img width="290" height="610" src="recupera email.jpg"/>
   <img width="290" height="610" src="main_menu.jpg"/>
+  <img width="290" height="610" src="anuncios.jpg"/>
   <img width="290" height="610" src="filtrar_anuncios.jpg"/>
   <img width="290" height="610" src="meus_anuncios.jpg"/>
   <img width="290" height="610" src="novo_anuncio.jpg"/>
