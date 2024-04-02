@@ -23,7 +23,7 @@
   <br>- Recuperação de senha via E-mail (FirebaseHelper)
 </p>
 <p>
-  ● View
+  ● Componentes de UI
  <br> - TextView 
  <br> - EditText
  <br> - ImageView
@@ -36,10 +36,31 @@
   ● ViewGroup
   <br> - LinearLayout
   <br> - ConstraintLayout 
+  <br> - ScrollView
 </p>
 <p>
-  ● 
+  ● FindViewById para recuperar components de UI
 </p>
+<p>
+  ● Toast para display de mensagens
+</p>
+<p>
+  ● Button para abrir tela de discagem do anuncio usando o telefone cadastrado pelo usuário
+</p>
+<p>
+  ● AlertDialog avisando o usuário que não esta autenticado
+</p>
+
+<h1>✨ Funcionalidades Aplicadas</h1>
+<p>
+  ● Swipe para deletar anuncios em "Meus Anuncios"
+</p>
+<p>
+  ● Modelo de discagem de telefone em "Criar conta" 
+</p>
+<h1>🎓 Author</h1>
+<p> Marcos Vinicius Onofre (follow me on [Linkedin](https://www.linkedin.com/in/marcos-onofre-3263b6240/))</p>
+
 
 
 
