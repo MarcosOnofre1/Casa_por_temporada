@@ -10,6 +10,7 @@
   <img width="290" height="610" src="filtrar_anuncios.jpg"/>
   <img width="290" height="610" src="meus_anuncios.jpg"/>
   <img width="290" height="610" src="novo_anuncio.jpg"/>
+  <img width="290" height="610" src="minha_conta.jpg"/>
 </div>
 <h1>🖥️ Tecnologias</h1>
 <p>
